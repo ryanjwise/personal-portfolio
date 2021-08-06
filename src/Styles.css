@@ -1,0 +1,9 @@
+.social-link{
+  color: green;
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.social-link :hover {
+  color: red;
+}

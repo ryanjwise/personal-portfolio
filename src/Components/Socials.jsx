@@ -1,16 +1,20 @@
 import React from 'react'
+import Github from '../Assets/Svg/Github'
+import Twitter from '../Assets/Svg/Twitter'
+import LinkedIn from '../Assets/Svg/LinkedIn'
+import '../Styles.css'
 
 export default function Socials() {
   return (
     <nav className="socials">
-      <a className="social-link" href="https://github.com/ryanjwise">
-        <i className="fab fa-github-square"></i>
+      <a href="https://github.com/ryanjwise">
+        <Github className="social-link"/>
       </a>
-      <a className="social-link" href="https://twitter.com/RyanJWise">
-        <i className="fab fa-twitter-square"></i>
+      <a href="https://twitter.com/RyanJWise">
+        <Twitter className="social-link"/>
       </a>
-      <a className="social-link" href="https://www.linkedin.com/in/ryanjwise/">
-        <i className="fab fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/ryanjwise/">
+        <LinkedIn className="social-link"/>
       </a>
     </nav>
   )

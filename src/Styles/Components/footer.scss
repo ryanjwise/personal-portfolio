@@ -1,0 +1,22 @@
+footer {
+  .footer-container {
+    min-height: 30px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  p {
+    margin: 0px;
+    font-size: 12px;
+  }
+}
+
+//Toggle Socials off footer for larger screens as they will appear on the header instead.
+@media screen and (min-width: 650px) {
+  .footer-container {
+    .socials {
+      display: none;
+    }
+  }
+}

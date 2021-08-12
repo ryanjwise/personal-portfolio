@@ -1,0 +1,67 @@
+.nav-array {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .nav-array-item {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+    /*Styles header elements as buttons similar to nav bar*/
+    .nav-btn {
+      height: 30px;
+      a,
+      a:visited {
+        line-height: 30px;
+        @include link-base;
+      }
+      a:hover {
+        @include link-hover;
+      }
+    }
+    .nav-img {
+      display: none;
+      margin-top: 10px;
+      max-height: 250px;
+      align-self: center;
+      /*Ensure image does not overrun parent container*/
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    .nav-extra {
+      margin-top: 10px;
+      display: none;
+    }
+  }
+}
+
+/*
+Media query enables display of image and contextual information at larger screen sizes
+*/
+@media screen and (min-width: 650px) {
+  .nav-array {
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    .nav-array-item {
+      width: 250px;
+      .nav-img {
+        display: block;
+        img {
+          max-height: 250px;
+          max-width: 250px;
+        }
+      }
+      .nav-extra {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

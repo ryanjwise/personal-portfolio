@@ -1,0 +1,120 @@
+#projects {
+  .description {
+    text-align: justify;
+  }
+  /*
+  Establishes grid and arrays items
+  Mobile display is quite simple and could have been achieved easily with flexbox
+  Grid was chosen instead for simplicity in translation to larger screen sizes
+  */
+  .project {
+    display: inline-grid;
+    justify-items: center;
+    align-items: start;
+    grid-template-columns: 1fr; //Single column display, full width of parent.
+    grid-template-areas:
+      "hr        "
+      "project-h "
+      "img       "
+      "about     "
+      "link-h    "
+      "links     ";
+    hr {
+      grid-area: hr;
+      width: 100%;
+    }
+    /*Selector for header*/
+    :nth-child(2) {
+      grid-area: project-h;
+    }
+    .content-img {
+      align-self: flex-start;
+      grid-area: img;
+      margin: 20px 10px;
+    }
+    .description {
+      grid-area: about;
+      align-self: flex-start;
+    }
+    /*Selector for tech header, hidden on mobile but included here to keep grid allocations together*/
+    :nth-child(5) {
+      grid-area: tech-h;
+      align-self: flex-end;
+      display: none;
+    }
+    /*Selector for tech array*/
+    :nth-child(6) {
+      grid-area: tech;
+      align-self: flex-start;
+      display: none;
+    }
+    /*Selector for link header*/
+    :nth-child(7) {
+      grid-area: link-h;
+      align-self: flex-end;
+    }
+    /*Selector for link array*/
+    :nth-child(8) {
+      grid-area: links;
+      align-self: flex-start;
+    }
+  }
+}
+/*Media query for tablet devices*/
+@media screen and (min-width: 650px) {
+  #projects {
+    .project {
+      display: inline-grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: 1fr 20px 1fr;
+      grid-template-areas:
+        "hr        hr        hr"
+        "project-h project-h project-h"
+        "img       .         about"
+        "tech-h    tech-h    tech-h"
+        "tech      tech      tech"
+        "link-h    link-h    link-h"
+        "links     links     links";
+      :nth-child(5) {
+        grid-area: tech-h;
+        align-self: flex-end;
+        display: block;
+      }
+      :nth-child(6) {
+        grid-area: tech;
+        align-self: flex-start;
+        display: flex;
+      }
+    }
+  }
+}
+/*Media query for large screen devices*/
+@media screen and (min-width: 1050px) {
+  #projects {
+    .project {
+      display: inline-grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: 1fr 20px 1fr;
+      grid-template-areas:
+        "hr        hr        hr"
+        "project-h project-h project-h"
+        "img       .         about"
+        "img       .         tech-h"
+        "img       .         tech"
+        "img       .         link-h"
+        "img       .         links";
+      :nth-child(5) {
+        grid-area: tech-h;
+        align-self: flex-end;
+        display: block;
+      }
+      :nth-child(6) {
+        grid-area: tech;
+        align-self: flex-start;
+        display: flex;
+      }
+    }
+  }
+}

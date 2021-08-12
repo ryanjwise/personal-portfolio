@@ -1,0 +1,99 @@
+#blog {
+  .content {
+    .nav-array {
+      // For some reason displaying the flex as column in this instance causes content to overrun on the right.
+      // The wrap condition ensures only one item will feature per row anyway.
+      flex-direction: row;
+      // Remove hr element from last item in array.
+      :last-child hr {
+        display: none;
+      }
+      .nav-array-item {
+        //Ensures elements layout correctly on mobile display
+        align-items: center;
+        width: 100%;
+
+        //Override for button
+        h3 {
+          font-size: 20px;
+          line-height: 20px;
+          margin-top: 0px;
+        }
+
+        //Displays as a dot without, even though already defined in global styles.
+        hr {
+          width: 100%;
+        }
+
+        //Controls parameters of title box
+        .hover {
+          height: 60px;
+          width: 100%;
+          max-width: 250px;
+          a,
+          a:visited {
+            @include link-base;
+          }
+          a:hover {
+            @include link-hover;
+          }
+          a {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+          }
+        }
+
+        //Centers text in button
+        .nav-btn {
+          height: auto;
+          width: 100%;
+        }
+
+        //Custom styling for date time, as of yet this is the only place this element appears
+        .nav-date {
+          height: 15px;
+          // width: 100%;
+          justify-self: flex-end;
+          align-self: center;
+          font-size: 0.8em;
+          font-style: italic;
+          font-variant: normal;
+          text-align: center;
+          text-decoration-style: none;
+        }
+
+        //Ensures consistant sizing of image across display
+        //Pads with background if image is too small
+        .nav-img {
+          height: auto;
+          width: 250px;
+          max-height: 100%;
+          max-width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        // Reanables display none from base componant
+        .nav-extra {
+          display: flex;
+        }
+      }
+    }
+
+    //Remove hr elements on tablet +
+    //Stack elements to the left on tablet +
+    @media screen and (min-width: 650px) {
+      .nav-array {
+        justify-content: space-between;
+        .nav-array-item {
+          width: 250px;
+          hr {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

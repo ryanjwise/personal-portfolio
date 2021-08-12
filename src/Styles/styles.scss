@@ -1,0 +1,131 @@
+// Map file
+// This file collates all other files in order of their dependencies
+// 1. External imports
+// 2. Globals
+// 3. Components
+// 4. Pages
+
+// External imports
+/*
+Import Google fonts
+
+Headers & Markers:
+font-family: 'Source Code Pro', monospace;
+
+Body & descriptions:
+font-family: 'Source Sans Pro', sans-serif;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Sans+Pro&display=swap");
+
+/* 
+Holds global variables and controls master style overrides for elements (Typography, links etc.)
+
+Componant styling: Textual,Graphical
+*/
+@import "global.scss";
+
+/*
+Controls the background size, colour and outline.
+
+Componant styling: Graphical
+*/
+@import "Components/background.scss";
+
+/*
+Controls and ensures the header bar remains responsive across all display sizes.
+Will remain functional down to screen width of 150px.
+
+Componant styling: Textual,Graphical
+*/
+@import "Components/header.scss";
+
+/*
+Styles main body of document, similar function global, however avoids touching the header and footer elements entirely.
+Go here for general font and graphical spacing overrides.
+
+Componant styling: Textual,Graphical
+*/
+@import "Components/main.scss";
+
+/*
+Controls and ensures the footer bar remains responsive across all display sizes.
+Will remain functional down to screen width of 110px, however is optimal above 260px.
+
+Componant styling: Textual,Graphical
+*/
+@import "Components/footer.scss";
+
+/*
+Controls socials size and colour of socials links
+
+Componant styling: Graphical
+*/
+@import "Components/socials.scss";
+
+/*
+Controls styling for array of logos, this is primarily seen in Skills and Hobbies sections, however is also used to array links in the project page.
+
+Componant styling: Textual,Graphical
+*/
+@import "Components/logo-array.scss";
+
+/*
+Used to control more complex arrays containing two or more objects in each item.
+As these arrays are typically used as navigation aids, the header is styled as a clickable button
+and unless overridden other elements are hidden on a mobile device.
+
+Breaks into 3 main componants:
+1. Header button with clickable a tag
+2. Image
+3. Contextual infomration
+
+This is used on both the projects page and the master blog page.
+
+Componant styling: Textual,Graphical
+*/
+@import "Components/nav-array.scss";
+
+/*
+Provides a baseline control for repeating elements flowing vertically down the page.
+It is mostly overriden in projects.scss, and isn't used elsewhere. Some work could probably be done to refactor and remove this styling.
+
+Componant styling: Graphical
+*/
+@import "Components/content-array.scss";
+
+
+/*
+Specific overrides for the about-me page.
+*/
+@import "Pages/about-me.scss";
+
+/*
+Specific overrides for the contacts page
+Primarily this is form formatting, if forms should appear elsewhere much of this could become a componant.
+
+Componant styling: Textual,Graphical
+*/
+@import "Pages/contact.scss";
+
+/*
+Specific overrides for the projects page
+Heavy use of grids were employed to ensure project display was responsive across devices, unfortunately it is very specific to the display of content on this page.
+
+Componant styling: Textual,Graphical
+*/
+@import "Pages/projects.scss";
+
+/*
+Specific overrides for the blog index page
+Includes overrides to nav-array.scss necessary to add datetime to the clickable links
+
+Componant styling: Textual,Graphical
+*/
+@import "Pages/blog.scss";
+
+/*
+Specific overrides for individual blog pages
+
+Componant styling: Textual,Graphical
+*/
+@import "Pages/blog-page.scss";

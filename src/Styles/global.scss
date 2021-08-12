@@ -1,0 +1,92 @@
+// This is the global configuration file
+// Set all global variables and globally applied configs here
+// Import this page first
+
+//Calculated Variables
+$height-margin: calc(23 * 2px);
+$height-body: calc(100vh - #{$height-margin});
+
+
+// Colours
+$colour-decoration: #808782; //Page border only
+$colour-background: #333745; //Background
+$colour-foreground: #47ff4e; //Foreground
+$colour-tertiary: #ffba49; //Call to action and location indicator
+$colour-hero: #b8336a; // Hover & Highlight colour
+
+// Typography
+@mixin font-header() {
+  font-family: "Source Code Pro", monospace;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+@mixin link-base() {
+  height: 100%;
+  width: 100%;
+  background-color: $colour-foreground;
+  display: block;
+  text-decoration: underline;
+  @include font-header;
+  color: $colour-background;
+  text-align: center;
+}
+@mixin link-hover {
+  background-color: $colour-hero;
+}
+@mixin link-active {
+  background-color: $colour-tertiary;
+}
+
+/*
+Controls Page Layout
+Ensuring the header and footer will always be at the top and bottom of the document,
+The body will always span a minimum of the full screen height
+*/
+.page-wrapper {
+  min-height: $height-body;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  main {
+    flex-grow: 1;
+  }
+  header,
+  footer {
+    flex-shrink: 0;
+  }
+}
+
+// Elements
+hr {
+  color: $colour-foreground;
+  margin: 5px 10px;
+  border-style: solid;
+}
+
+body {
+  @include font-header();
+  color: $colour-foreground;
+
+  p {
+    font-family: "Source Sans Pro", sans-serif;
+    text-transform: none;
+    font-variant: normal;
+    font-weight: normal;
+  }
+}
+
+a,
+a:visited {
+  color: $colour-tertiary;
+}
+
+a:hover {
+  color: $colour-hero;
+}
+
+// Define colour on highlight.
+::selection {
+  background: $colour-hero;
+  color: $colour-background;
+}

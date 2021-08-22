@@ -2,7 +2,7 @@ import React from "react";
 import IconArray from "../Components/IconArray";
 
 const About = () => {
-  let skills = [
+  const skills = [
     "powershell",
     "bash",
     "git",
@@ -19,7 +19,7 @@ const About = () => {
     "heroku",
   ];
 
-  let hobbies = [
+  const hobbies = [
     "camping",
     "compass",
     "gaming",
@@ -38,8 +38,6 @@ const About = () => {
       <section class="content">
         <section class="description">
           <h3 class="content-header">About Me:</h3>
-          {/* <img src={iconBash} alt={iconBash} />
-          <Icon name="bash" label={true} /> */}
           <p>
             Hi! I'm Ryan, a junior web developer studying at Coder Academy
             Melbourne. My background is in contract administration,

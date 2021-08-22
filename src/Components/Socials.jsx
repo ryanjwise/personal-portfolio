@@ -1,20 +1,18 @@
-import React from 'react'
-import Github from '../Assets/Svg/Github'
-import Twitter from '../Assets/Svg/Twitter'
-import LinkedIn from '../Assets/Svg/LinkedIn'
+import React from "react";
+import Icons from "../Assets/Svg/Icons";
 
 export default function Socials() {
   return (
     <nav className="socials">
       <a href="https://github.com/ryanjwise">
-        <Github className="social-link"/>
+        <Icons className="social-link" icon="github" />
       </a>
       <a href="https://twitter.com/RyanJWise">
-        <Twitter className="social-link"/>
+        <Icons className="social-link" icon="twitter" />
       </a>
       <a href="https://www.linkedin.com/in/ryanjwise/">
-        <LinkedIn className="social-link"/>
+        <Icons className="social-link" icon="linkedin" />
       </a>
     </nav>
-  )
+  );
 }

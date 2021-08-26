@@ -1,6 +1,18 @@
 import React from "react";
+import ProjectLink from "./../Components/ProjectLink"
 
 const Projects = () => {
+  const projects = [{
+    title: "Personal Website",
+    screenshotPath: "/img/design-mobile-about.png",
+    screenshotText: "Screenshot of Mobile Display",
+    stack: [
+      "html5",
+      "git",
+      "netlify"
+    ]
+  }]
+
   return (
     <main id="projects">
       <section class="intro">
@@ -9,6 +21,8 @@ const Projects = () => {
       <section class="content">
         {/* <!-- formatted in nav-array.scss --> */}
         <nav class="nav-array">
+          {projects.map((project, index) => <ProjectLink key={index} project={project} />)}
+{/*           
           <article class="nav-array-item">
             <div class="nav-btn">
               <a href="#project-title-1">Personal Website</a>
@@ -20,7 +34,7 @@ const Projects = () => {
               />
             </div>
             <div class="nav-extra">
-              {/* <!-- formatted in logo-array.scss --> */}
+<!-- formatted in logo-array.scss --> 
               <article class="logo-array">
                 <article class="link logo-array-item">
                   <figure class="logo">
@@ -53,7 +67,7 @@ const Projects = () => {
                 </article>
               </article>
             </div>
-          </article>
+          </article> */}
           <article class="nav-array-item">
             <div class="nav-btn">
               <a href="#project-title-3">Routinely</a>

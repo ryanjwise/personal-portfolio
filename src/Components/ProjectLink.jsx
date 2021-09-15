@@ -1,12 +1,11 @@
 import React from "react";
 import IconArray from "./IconArray";
 
-const ProjectLink = ({project}) => {
+const ProjectLink = ({project, project_id}) => {
   return (
     <article class="nav-array-item">
-      {console.log(project.screenshotPath)}
       <div class="nav-btn">
-        <a href={`#project-link-${project.key}`}>{project.title}</a>
+        <a href={`#project-link-${project_id}`}>{project.title}</a>
       </div>
       <div class="nav-img">
         <img

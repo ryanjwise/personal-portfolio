@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectLink from "./../Components/ProjectLink"
+import ProjectAbout from "./../Components/ProjectAbout"
 
 const Projects = () => {
   const projects = [{
@@ -10,8 +11,28 @@ const Projects = () => {
       "html5",
       "git",
       "netlify"
+    ]},
+    {
+    title: "Routinely",
+    screenshotPath: "/img/design-routinely.png",
+    screenshotText: "Routinely UI Demo",
+    stack: [
+      "ruby",
+      "git"
+    ]},
+    {
+    title: "Oil In Wax",
+    screenshotPath: "/img/design-oilinwax.png",
+    screenshotText: "Oil In Wax Landing Page",
+    stack: [
+      "sass",
+      "html5",
+      "bootstrap5",
+      "git",
+      "rails",
+      "heroku"
     ]
-  }]
+    }]
 
   return (
     <main id="projects">
@@ -21,144 +42,11 @@ const Projects = () => {
       <section class="content">
         {/* <!-- formatted in nav-array.scss --> */}
         <nav class="nav-array">
-          {projects.map((project, index) => <ProjectLink key={index} project={project} />)}
-{/*           
-          <article class="nav-array-item">
-            <div class="nav-btn">
-              <a href="#project-title-1">Personal Website</a>
-            </div>
-            <div class="nav-img">
-              <img
-                src="./resources/Images/design-mobile-about.png"
-                alt="Screenshot of mobile Display"
-              />
-            </div>
-            <div class="nav-extra">
-<!-- formatted in logo-array.scss --> 
-              <article class="logo-array">
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-sass.svg"
-                      alt="SASS Icon"
-                    />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-html5.svg"
-                      alt="HTML Icon"
-                    />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img src="./resources/Icons/icon-git.svg" alt="Git Icon" />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-netlify.svg"
-                      alt="Netlify Icon"
-                    />
-                  </figure>
-                </article>
-              </article>
-            </div>
-          </article> */}
-          <article class="nav-array-item">
-            <div class="nav-btn">
-              <a href="#project-title-3">Routinely</a>
-            </div>
-            <div class="nav-img">
-              <img
-                src="./resources/Images/design-routinely.png"
-                alt="Routinely UI Demo"
-              />
-            </div>
-            <div class="nav-extra">
-              <article class="logo-array">
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-ruby.svg"
-                      alt="Ruby Icon"
-                    />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img src="./resources/Icons/icon-git.svg" alt="Git Icon" />
-                  </figure>
-                </article>
-              </article>
-            </div>
-          </article>
-          <article class="nav-array-item">
-            <div class="nav-btn">
-              <a href="#project-title-4">Oil In Wax</a>
-            </div>
-            <div class="nav-img">
-              <img
-                src="./resources/Images/design-oilinwax.png"
-                alt="Oil In Wax Landing Page"
-              />
-            </div>
-            <div class="nav-extra">
-              <article class="logo-array">
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-sass.svg"
-                      alt="SASS Icon"
-                    />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-html5.svg"
-                      alt="HTML Icon"
-                    />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-bootstrap.svg"
-                      alt="Bootstrap 5 Icon"
-                    />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img src="./resources/Icons/icon-git.svg" alt="Git Icon" />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-rails.svg"
-                      alt="Rails Icon"
-                    />
-                  </figure>
-                </article>
-                <article class="link logo-array-item">
-                  <figure class="logo">
-                    <img
-                      src="./resources/Icons/icon-heroku.svg"
-                      alt="Heroku Icon"
-                    />
-                  </figure>
-                </article>
-              </article>
-            </div>
-          </article>
+          {projects.map((project, index) => <ProjectLink key={index} project_id={index + 1} project={project} />)}
         </nav>
         {/* <!-- formatted in content-array.scss with signigicant overrides in projects.scss --> */}
         <section class="projects content-array">
+          {projects.map((project, index) => <ProjectAbout key={index} project_id={index + 1} project={project} />)}
           <article id="project-title-1" class="project content-array-item">
             <hr />
             <h3 class="content-header">Personal Website</h3>

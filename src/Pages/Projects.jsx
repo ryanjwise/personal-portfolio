@@ -1,38 +1,82 @@
 import React from "react";
-import ProjectLink from "./../Components/ProjectLink"
-import ProjectAbout from "./../Components/ProjectAbout"
+import ProjectLink from "./../Components/ProjectLink";
+import ProjectAbout from "./../Components/ProjectAbout";
 
 const Projects = () => {
-  const projects = [{
-    title: "Personal Website",
-    screenshotPath: "/img/design-mobile-about.png",
-    screenshotText: "Screenshot of Mobile Display",
-    stack: [
-      "html5",
-      "git",
-      "netlify"
-    ]},
+  const projects = [
     {
-    title: "Routinely",
-    screenshotPath: "/img/design-routinely.png",
-    screenshotText: "Routinely UI Demo",
-    stack: [
-      "ruby",
-      "git"
-    ]},
+      title: "Personal Website",
+      about: [
+        "Welcome!",
+        "I created this portfolio to showcase both myself and my work. Though it came with the added benefit of allowing me to improve and develop my foundational web development skillset. Through this project, I learnt about Semantic HTML, Compiled CSS, Responsive Design, Git Workflows and Web Deployment Pipelines! Though there's still work to be done, and things that could be improved, I'm proud of the result and hope you like it too!",
+      ],
+      challenges: [
+        {
+          title: "Theme",
+          body: ["From the outset, I wanted to have a strong theme or aesthetic to base my design around. After going down a bit of a research rabbit hole, I settled on a terminal theme. Though I like the result it did impose heavy restrictions on the colour pallet (I know the green text isn't for everyone!) and demand very rigid styling.",
+          "Ultimately the need for consistent styling proved a boon because it encouraged me to design through the use of 'componants' that could be used in multiple different places. If I were to do a similar project again in the future I would put more energy into repeatable components that could be used ubiquitously, they're all still a little unique here!"],
+        },
+        {
+          title: "Scoping & Specificity",
+          body: ["There are a lot of cool features in CSS 3 that I wanted to explore, however, given project deadlines I was unable to implement all of them. A big challenge here was being selective in the application of content and features to ensure that whilst incomplete the final product felt both consistent and complete to the viewer. ",
+          "Working with SASS too, and I got a little over-enthusiastic with the power of CSS nesting. As a result, a lot of components are styled using much higher levels of specificity than I would like. To circumvent this and override component styling each page needed to be assigned its own ID tag for the SASS to target. ",
+          "Both of these issues could be solved with a little more time and a less novice approach to the site. Which is exactly what I intend to do! In the coming month I would love to rebuild this site with tighter styling and database in the backend, allowing me to update, edit, and tweak this content a little more freely."]
+        }
+      ],
+      screenshotPath: "/img/design-mobile-about.png",
+      screenshotText: "Screenshot of Mobile Display",
+      stack: ["html5", "git", "netlify"],
+      links: {web: "", github: ""}
+    },
     {
-    title: "Oil In Wax",
-    screenshotPath: "/img/design-oilinwax.png",
-    screenshotText: "Oil In Wax Landing Page",
-    stack: [
-      "sass",
-      "html5",
-      "bootstrap5",
-      "git",
-      "rails",
-      "heroku"
-    ]
-    }]
+      title: "Routinely",
+      about: [
+        "Demo Text",
+        "Demo Text 2",
+      ],
+      challenges: [
+        {
+          title: "T1",
+          body: ["T1 P1",
+          "T1 P2"],
+        },
+        {
+          title: "T2",
+          body: ["T2 P1",
+          "T2 P2",
+          "T2 P3"]
+        }
+      ],
+      screenshotPath: "/img/design-routinely.png",
+      screenshotText: "Routinely UI Demo",
+      stack: ["ruby", "git"],
+      links: {web: "", github: ""}
+    },
+    {
+      title: "Oil In Wax",
+      about: [
+        "Demo Text",
+        "Demo Text 2",
+      ],
+      challenges: [
+        {
+          title: "T1",
+          body: ["T1 P1",
+          "T1 P2"],
+        },
+        {
+          title: "T2",
+          body: ["T2 P1",
+          "T2 P2",
+          "T2 P3"]
+        }
+      ],
+      screenshotPath: "/img/design-oilinwax.png",
+      screenshotText: "Oil In Wax Landing Page",
+      stack: ["sass", "html5", "bootstrap5", "git", "rails", "heroku"],
+      links: {web: "", github: ""}
+    },
+  ];
 
   return (
     <main id="projects">
@@ -42,11 +86,19 @@ const Projects = () => {
       <section class="content">
         {/* <!-- formatted in nav-array.scss --> */}
         <nav class="nav-array">
-          {projects.map((project, index) => <ProjectLink key={index} project_id={index + 1} project={project} />)}
+          {projects.map((project, index) => (
+            <ProjectLink key={index} project_id={index + 1} project={project} />
+          ))}
         </nav>
         {/* <!-- formatted in content-array.scss with signigicant overrides in projects.scss --> */}
         <section class="projects content-array">
-          {projects.map((project, index) => <ProjectAbout key={index} project_id={index + 1} project={project} />)}
+          {projects.map((project, index) => (
+            <ProjectAbout
+              key={index}
+              project_id={index + 1}
+              project={project}
+            />
+          ))}
           <article id="project-title-1" class="project content-array-item">
             <hr />
             <h3 class="content-header">Personal Website</h3>

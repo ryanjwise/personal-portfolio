@@ -15,7 +15,7 @@ const ProjectLink = ({project, project_id}) => {
       </div>
       <div class="nav-extra">
         {/* <!-- formatted in logo-array.scss --> */}
-        <IconArray icons={project.stack} label={false} />
+        <IconArray icons={project.stack} labels={false} />
       </div>
     </article>
   );

@@ -26,7 +26,7 @@ const Projects = () => {
       screenshotPath: "/img/design-mobile-about.png",
       screenshotText: "Screenshot of Mobile Display",
       stack: ["html5", "git", "netlify"],
-      links: {web: "", github: ""}
+      links: {web: "https://ryanjwise.netlify.app/", github: "https://github.com/ryanjwise/personal-portfolio"}
     },
     {
       title: "Routinely",
